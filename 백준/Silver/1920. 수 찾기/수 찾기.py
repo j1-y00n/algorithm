@@ -1,11 +1,10 @@
 import sys
 
-N = int(input())
-n = set(map(int, sys.stdin.readline().split()))
-M = int(input())
-m = list(map(int, sys.stdin.readline().split()))
-s_m = set(m)
-a = n & s_m
+input()
+n = set(sys.stdin.readline().split())
+input()
+m = sys.stdin.readline().split()
+a = n & set(m)
 for i in m:
     if i in a:
         print(1)
