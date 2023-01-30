@@ -1,6 +1,3 @@
 N = int(input())
-cnt = 1
-
-while cnt <= N:
-    print('*' * cnt)
-    cnt += 1
+for i in range(1, N + 1):
+    print('*'*i)
