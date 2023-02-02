@@ -7,12 +7,11 @@ for _ in range(N):
     xy.append([x, y])
 
 rank = []
-cnt = 0
 
 for i in range(N):
+    cnt = 0
     for j, k in xy:
         if xy[i][0] < j and xy[i][1] < k:
             cnt += 1
     rank.append(cnt + 1)    
-    cnt = 0
 print(*rank)
