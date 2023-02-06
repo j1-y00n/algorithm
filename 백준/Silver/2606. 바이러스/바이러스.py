@@ -10,17 +10,12 @@ for a in range(pair):
 
 visited = [False] * (C + 1)
 
-def dfs(start):
-    stack = [start]
+def dfs(graph, start, visited):
     visited[start] = True
+    for i in graph[start]:
+        if not visited[i]:
+            dfs(graph, i, visited)
 
-    while stack:
-        cur = stack.pop()
-        for adj in graph[cur]:
-            if not visited[adj]:
-                visited[adj] = True
-                stack.append(adj)
-    
     return sum(visited)
 
-print(dfs(1)-1)
+print(dfs(graph, 1, visited)-1)
