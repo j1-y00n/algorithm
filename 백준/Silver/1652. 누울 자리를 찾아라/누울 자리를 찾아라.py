@@ -1,38 +1,19 @@
-import sys
-
 N = int(input())
-room = [list(input()) for _ in range(N)]
+room_h = [input() for _ in range(N)]
+room_v = [''.join(i) for i in zip(*room_h)]
 
-result1 = 0
-for i in range(N):
-    cnt = 0
-    for j in range(N):
-        if room[i][j] == '.':
-            cnt += 1
-        elif room[i][j] == 'X':
-            if cnt >= 2:
-                result1 += 1
-                cnt = 0
-            else:
-                cnt = 0
-        if j == N-1:
-            if cnt >= 2:
-                result1 += 1
+h_cnt = 0
+for h in room_h:
+    a = h.split('X')
+    for b in a:
+        if '..' in b:
+            h_cnt += 1
 
-result2 = 0
-for j in range(N):
-    cnt = 0
-    for i in range(N):
-        if room[i][j] == '.':
-            cnt += 1
-        elif room[i][j] == 'X':
-            if cnt >= 2:
-                result2 += 1
-                cnt = 0
-            else:
-                cnt = 0
-        if i == N-1:
-            if cnt >= 2:
-                result2 += 1
-
-print(result1, result2)
+v_cnt = 0
+for v in room_v:
+    c = v.split('X')
+    for d in c:
+        if '..' in d:
+            v_cnt += 1
+               
+print(h_cnt, v_cnt)
