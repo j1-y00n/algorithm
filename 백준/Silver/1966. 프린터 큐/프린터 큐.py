@@ -6,7 +6,6 @@ for _ in range(T):
     N, M = map(int, sys.stdin.readline().split())
     A = list(map(int, sys.stdin.readline().split()))
     d = deque()
-    result = []
     for i in range(N):
         d.append((A[i], i))
 
